@@ -3,7 +3,7 @@ import threading
 from time import sleep
 
 ya_sock = socket.socket()
-addr = ("82.250.250.242", 443)
+addr = ("5.255.255.242", 443)
 ya_sock.connect(addr)
 
 data_out = b"GET / HTTP/1.1\r\nHost:ya.ru\r\n\r\n"
@@ -19,7 +19,7 @@ def receiving():
         data_in = data_in + data_chunk
 
 
-rec_thread = threading.Thread(target=receiving())
+rec_thread = threading.Thread(target=receiving)
 rec_thread.start()
 
 sleep(4)
