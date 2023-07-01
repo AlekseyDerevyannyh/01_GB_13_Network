@@ -28,15 +28,29 @@ def write():
             print('Error sending message!')
             client.close()
 ````
+Запускаем сервер на отдельном ПК внутри локальной сети. Затем запускаем двух клиентов с одного ПК.
+
+Вывод в терминале первого клиента, видим сообщение от второго клиента:
 
 ![Client1 chat image](img/img_2.png "Client1 chat")
 
+Вывод в терминале второго клиента:
+
 ![Client2 chat image](img/img_3.png "Client2 chat")
+
+Вывод в терминале сервера, видим обоих подключённых клинтов:
 
 ![Server chat image](img/img_1.png "Server chat")
 
+Проверяем открытые соккеты на сервере, видим там подключения от обоих клиентов.
+Видим, что IP клиентов один, а порты разные, т.к. оба клиента запускаются с одного ПК:
+
 ![Server sockets image](img/img_4.png "Server sockets")
 
+Проверяем открытые соккеты на стороне клиентов, видим подключения обоих клиентов к серверу:
+
 ![Clients sockets image](img/img_5.png "Clients sockets")
+
+Перехватываем трафик чата в Wireshark, видим диалог из чата:
 
 ![Wireshark session image](img/img_6.png "Wireshark session")
