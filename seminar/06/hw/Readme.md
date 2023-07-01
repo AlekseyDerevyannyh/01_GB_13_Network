@@ -38,7 +38,7 @@ def write():
 
 ![Client2 chat image](img/img_3.png "Client2 chat")
 
-Вывод в терминале сервера, видим обоих подключённых клинтов:
+Вывод в терминале сервера, видим обоих подключённых клиентов:
 
 ![Server chat image](img/img_1.png "Server chat")
 
