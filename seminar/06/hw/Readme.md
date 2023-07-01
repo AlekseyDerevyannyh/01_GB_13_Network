@@ -1,0 +1,42 @@
+# Компьютерные сети
+## Домашняя работа 6
+* **
+### Автор:
+Деревянных Алексей
+* **
+
+#### Условие задачи:
+1. Напишите свою программу сервер и запустите её. (если опыта в python нет, запустите готовый код и разберитесь, как он работает - файл с кодом готового клиента: https://disk.yandex.ru/d/cAfsjjG_mLqF3A файл с кодом готового сервера: https://disk.yandex.ru/d/qrj4qpiXhXVwgw )
+
+2. ** попробуйте улучшить код, опишите что сделали, какие фичи добавили.
+3. Запустите несколько клиентов. Сымитируйте чат.
+4. Отправьте мне код написанного сервера (можете через github, если удобно или прямо здесь в txt формате) и скриншоты работающего чата.
+5. Отследите сокеты с помощью команды netstat. (тоже пришлите скриншот именно сокетов вашего чата)
+6. Перехватите трафик своего чата в Wireshark и cшейте сессию. Пришлите скриншот сшитой сессии с диалогом.
+
+
+### Описание работы
+В файлах __*server.py*__ и __*client.py*__ заменил кодировку *ascii* на *utf8* для корректной работы чата на разных языках.
+Также добавил проверку исключений при отправке сообщения клиентом в файле __*client.py*__
+```` python
+def write():
+    while True:
+        message = '{}: {}'.format(nickname, input(''))
+        try:
+            client.send(message.encode('utf8'))
+        except:
+            print('Error sending message!')
+            client.close()
+````
+
+![Client1 chat image](img/img_2.png "Client1 chat")
+
+![Client2 chat image](img/img_3.png "Client2 chat")
+
+![Server chat image](img/img_1.png "Server chat")
+
+![Server sockets image](img/img_4.png "Server sockets")
+
+![Clients sockets image](img/img_5.png "Clients sockets")
+
+![Wireshark session image](img/img_6.png "Wireshark session")
